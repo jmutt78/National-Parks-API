@@ -26,10 +26,10 @@ function displayResults(responseJson) {
 };
 
 
-function getParksData(state, maxResults, searchQuary) {
-
+function getParksData(stateCodes, maxResults, searchQuary) {
+console.log(stateCodes);
   const params = {
-      stateCode: state,
+      stateCode: stateCodes,
       limit: maxResults,
       q: searchQuary,
       api_key: apiKey
@@ -58,9 +58,9 @@ function getParksData(state, maxResults, searchQuary) {
       event.preventDefault();
       const searchQuary = $('#search-input').val();
       const maxResults = $('#max-number').val();
-      const state = $('#state').val();
+      const stateCodes = $('#state').val();
 
-      getParksData(state, maxResults, searchQuary);
+      getParksData(stateCodes, maxResults, searchQuary);
     });
   }
 
