@@ -12,12 +12,9 @@ function formatQueryParams(params) {
 function displayResults(responseJson) {
   console.log(responseJson);
     $('#results-list').empty();
-    // iterate through the items array
+
   for (let i = 0; i < responseJson.data.length; i++){
-    // for each video object in the items
-    //array, add a list item to the results
-    //list with the video title, description,
-    //and thumbnail
+
     $('#results-list').append(
       `<li><h3>${responseJson.data[i].name}</h3>
       <p>${responseJson.data[i].description}</p>
